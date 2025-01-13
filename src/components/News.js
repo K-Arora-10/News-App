@@ -65,6 +65,8 @@ export default class News extends Component {
                     desc={element.description}
                     imgUrl={!element.urlToImage?"https://cdn.pixabay.com/photo/2017/06/26/19/03/news-2444778_1280.jpg":element.urlToImage}
                     newsUrl={element.url}
+                    author={element.author}
+                    date={(element.publishedAt)}
                   />
               </div>
               })}
