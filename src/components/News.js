@@ -28,15 +28,19 @@ export default class News extends Component {
   }
 
   async componentDidMount() {
+    this.props.progress(10);
     let url = `https://newsapi.org/v2/top-headlines?category=${this.props.category}&apiKey=0ba2828fbf3e409b983b74325db0d7dc&page=1&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
+    this.props.progress(30);
     let parsedData = await data.json();
+    this.props.progress(50);
     this.setState({
       articles: parsedData.articles,
       totalResults: parsedData.totalResults,
       loading: false,
     });
+    this.props.progress(100);
   }
 
   top = ()=>{
@@ -44,6 +48,7 @@ export default class News extends Component {
   }
 
   fetchMoreData = async()=>{
+    
     let url = `https://newsapi.org/v2/top-headlines?country=us&category=${
       this.props.category
     }&apiKey=0ba2828fbf3e409b983b74325db0d7dc&page=${
@@ -113,7 +118,7 @@ export default class News extends Component {
             </InfiniteScroll>
             <br />
             <br />
-            <button type="button" className="btn btn-dark" style={{position:"fixed",bottom:"20px",right:"20px"}} onClick={this.top}>&uarr;</button>
+            <button type="button" className="btn btn-dark" style={{position:"fixed",bottom:"10px",right:"10px"}} onClick={this.top}>&uarr;</button>
           
         </center>
       </>
