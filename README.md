@@ -5,7 +5,7 @@ A sleek and responsive React-based web application that fetches and displays the
 ## 🔧 Tech Stack
 
 - **Frontend:** React, JavaScript, HTML, CSS
-- **API:** [NewsAPI](https://newsapi.org/) (or your chosen news provider)
+- **API:** [NewsAPI](https://newsapi.org/)
 - **Package Manager:** npm
 
 ## 🚀 Features
